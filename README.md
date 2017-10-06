@@ -30,6 +30,8 @@ Clone this repository, install dependencies, then run the project with the follo
 > git clone git@github.com:artprofi91/MySQL-Burger.git
 > cd MySQL-Burger
 > npm install
+> node server.js
+> go to localhost:8080
 ```
 
 #### Not Familiar with Git?
@@ -38,6 +40,8 @@ Click [here](https://github.com/artprofi91/MySQL-Burger) then download the .zip 
 
 ```
 > npm install
+> node server.js
+> go to localhost:8080
 ```
 
 #### Hint
