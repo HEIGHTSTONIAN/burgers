@@ -16,6 +16,8 @@ Each burger in the waiting area also has a Devour it! button. When the user clic
 
 The most important part of my app - every burger stores in a database, whether devoured or not.
 
+Click [here](http://art-mysql-burger.herokuapp.com/) to see the app live.
+
 ## Project Installation
 
 There are two methods to download the repository.
