@@ -1,28 +1,28 @@
-var express = require("express");
+'use strict';
 
-var router = express.Router();
-var burger = require("../models/burger.js");
+const express = require('express');
+const router = express.Router();
+const burger = require('../models/burger.js');
 
-router.get("/", function(req, res) {
-  res.redirect("/burger");
-});
-
-router.get("/burger", function(req, res) {
-  burger.all(function(burgerData) {
-    res.render("index", { burger_data: burgerData });
+router.get('/', (req, res) => {
+  burger.getAll((err, result) => {
+    if (err) console.log(err);
+    res.render('index', { burger_list: result || [] });
   });
 });
 
 
-router.post("/burger/create", function(req, res) {
-  burger.create(req.body.burger_name, function(result) {
-    res.redirect("/");
+router.post('/burger', (req, res) => {
+  burger.create(req.body.burger_name, (err) => {
+    if (err) console.log(err);
+    res.redirect('/');
   });
 });
 
-router.put("/burger/update", function(req, res) {
-  burger.update(req.body.burger_id, function(result) {
-    res.redirect("/");
+router.put('/burger', (req, res) => {
+  burger.update(req.body.burger_id, (err) => {
+    if (err) console.log(err);
+    res.redirect('/');
   });
 });
 

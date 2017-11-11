@@ -1,4 +1,3 @@
-INSERT INTO burgers (burger_name, devoured) VALUES
-('USA Burger', FALSE),
-('Italy Burger', FALSE),
-('Russia Burger', FALSE);
+-- dump the database with initial records
+INSERT INTO burgers (burger_name)
+    VALUES ('Cheese Burger'), ('Supreme Burger'), ('Lily Burger');

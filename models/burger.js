@@ -1,24 +1,19 @@
-var orm = require("../config/orm.js");
+'use strict';
 
-var burger = {
-  all: function(cb) {
-    orm.all("burgers", function(res) {
-      cb(res);
-    });
-  },
-  create: function(name, cb) {
-    orm.create("burgers", [
-      "burger_name", "devoured"
-    ], [
-      name, false
-    ], cb);
-  },
-  update: function(id, cb) {
-    var condition = "id=" + id;
-    orm.update("burgers", {
-      devoured: true
-    }, condition, cb);
+const orm = require('../config/orm.js');
+
+class Burger {
+  getAll(cb) {
+    orm.selectAll('burgers', cb);
   }
-};
 
-module.exports = burger;
+  create(name, cb) {
+    orm.insertOne('burgers', ['burger_name'], [name], cb);
+  }
+
+  update(id, cb) {
+    orm.updateOne('burgers', { devoured: true }, `id=${id}`, cb);
+  }
+}
+
+module.exports = new Burger();
